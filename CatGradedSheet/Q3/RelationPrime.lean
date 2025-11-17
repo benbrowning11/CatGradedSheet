@@ -1,8 +1,8 @@
-import Q3.Defs
+import CatGradedSheet.Q3.Defs
 
 open List
 
-namespace Q3
+namespace CatGradedSheet.Q3
 
 
 variable {A B C : Type*}
@@ -87,4 +87,4 @@ to the `identityRel`.
 def axiomEntailment (C : Type*) : Entailment C C :=
   entailmentFromRel (identityRel C)
 
-end Q3
+end CatGradedSheet.Q3

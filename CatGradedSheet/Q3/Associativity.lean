@@ -1,10 +1,10 @@
-import Q3.Composition
-import Q3.Defs
+import CatGradedSheet.Q3.Composition
+import CatGradedSheet.Q3.Defs
 import Mathlib.Tactic
 
 open List
 
-namespace Q3
+namespace CatGradedSheet.Q3
 
 variable {A B C D : Type*}
 
@@ -88,4 +88,4 @@ lemma assoc_proof (h : Entailment A B) (g : Entailment B C) (f : Entailment C D)
   ext as d
   unfold entailmentComp compRel
   sorry
-end Q3
+end CatGradedSheet.Q3

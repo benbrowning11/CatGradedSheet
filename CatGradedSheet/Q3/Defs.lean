@@ -8,7 +8,7 @@ import Std
 open CategoryTheory
 open List
 
-namespace Q3
+namespace CatGradedSheet.Q3
 
 variable {C_cat : Type*} [Category C_cat]
 
@@ -63,4 +63,4 @@ defined as `a (S ◦ R) c ⇐⇒ ∃ b ∈ B. a R b ∧ b S c`.
 def relationComp {A B C : Type*} (R : A → B → Prop) (S : B → C → Prop) (a : A) (c : C) : Prop :=
   ∃ b : B, R a b ∧ S b c
 
-end Q3
+end CatGradedSheet.Q3

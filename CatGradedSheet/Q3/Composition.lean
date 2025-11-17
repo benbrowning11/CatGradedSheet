@@ -1,8 +1,8 @@
-import Q3.RelationPrime
+import CatGradedSheet.Q3.RelationPrime
 
 open List
 
-namespace Q3
+namespace CatGradedSheet.Q3
 
 variable {A B C : Type*}
 
@@ -120,4 +120,4 @@ lemma comp_of_primes_eq_prime_of_comp (R : A → B → Prop) (S : B → C → Pr
         simp
         exact h_S
 
-end Q3
+end CatGradedSheet.Q3

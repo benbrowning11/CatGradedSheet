@@ -1,6 +1,6 @@
-import Q3.Category
+import CatGradedSheet.Q3.Category
 
-namespace Q3
+namespace CatGradedSheet.Q3
 
 universe u
 
@@ -88,4 +88,4 @@ Since Empty is the only reasonable candidate for an initial object
 theorem no_initial_object : ¬∃ (I : Type u), IsInitialObject I := by
   sorry
 
-end Q3
+end CatGradedSheet.Q3

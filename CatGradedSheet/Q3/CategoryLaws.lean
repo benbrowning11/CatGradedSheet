@@ -1,8 +1,8 @@
-import Q3.Composition
+import CatGradedSheet.Q3.Composition
 
 open List
 
-namespace Q3
+namespace CatGradedSheet.Q3
 
 variable {A B C D : Type*}
 
@@ -124,4 +124,4 @@ lemma assoc_proof (h : Entailment A B) (g : Entailment B C) (f : Entailment C D)
   entailment_assoc A B C D h g f
 
 
-end Q3
+end CatGradedSheet.Q3

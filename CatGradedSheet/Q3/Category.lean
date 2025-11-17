@@ -1,8 +1,8 @@
-import Q3.CategoryLaws
+import CatGradedSheet.Q3.CategoryLaws
 import Mathlib.CategoryTheory.Category.Basic
 open CategoryTheory
 
-namespace Q3
+namespace CatGradedSheet.Q3
 
 /-! ## Category Instance -/
 
@@ -22,4 +22,4 @@ instance : Category (Type*) where
     -- inverted due to my weird def of comp
     exact (assoc_proof f g h).symm
 
-end Q3
+end CatGradedSheet.Q3

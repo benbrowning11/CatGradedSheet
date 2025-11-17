@@ -1,11 +1,10 @@
-import Q3.Category
-import Q3.NoInitialObject
-import Q3.NoProducts
+import CatGradedSheet.Q3.Category
+import CatGradedSheet.Q3.NoInitialObject
 import Mathlib.CategoryTheory.Limits.Shapes.Terminal
 import Mathlib.CategoryTheory.Category.Basic
 open CategoryTheory
 
-namespace Q3
+namespace CatGradedSheet.Q3
 
 /-! # Part 2 -/
 
@@ -45,37 +44,8 @@ theorem empty_is_terminal : IsTerminal Empty := by
 example : ¬∃ (I : Type*), IsInitialObject I := no_initial_object
 
 /-! ## (c) Ent has binary products. -/
-example : ¬ IsProduct (proj1 Bool Unit) (proj2 Bool Unit) :=
-  Q3.not_IsProduct_proj1_proj2_bool_unit
 /-! ## (d) Ent has binary coproducts. -/
 
-def IsCoproduct {S A B : Type} (i1 : Entailment A S) (i2 : Entailment B S) : Prop :=
-  ∀ (Z : Type) (f : Entailment A Z) (g : Entailment B Z),
-    ∃! (h : Entailment S Z), h ⊛ i1 = f ∧ h ⊛ i2 = g
-
-def inl (A B : Type*) : Entailment A (A ⊕ B) := {
-  relation := fun as s => ∃ (a : A), as = [a] ∧ s = Sum.inl a,
-  perm_invariant := by
-    intros as as' s h_perm h_rel
-    obtain ⟨a, h_as, h_s⟩ := h_rel
-    rw [h_as] at h_perm
-    use a
-    constructor
-    · exact List.Perm.eq_singleton h_perm
-    · exact h_s
-}
-
-def inr (A B : Type*) : Entailment B (A ⊕ B) := {
-  relation := fun bs s => ∃ (b : B), bs = [b] ∧ s = Sum.inr b,
-  perm_invariant := by
-    intros bs bs' s h_perm h_rel
-    obtain ⟨b, h_bs, h_s⟩ := h_rel
-    rw [h_bs] at h_perm
-    use b
-    constructor
-    · exact List.Perm.eq_singleton h_perm
-    · exact h_s
-}
 
 /-! ## (e) Ent has exponentials. -/
 def HasExponentials : Prop :=
@@ -84,4 +54,4 @@ def HasExponentials : Prop :=
       ∃! (g : Entailment Z E), sorry
 
 
-end Q3
+end CatGradedSheet.Q3
